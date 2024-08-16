@@ -24,6 +24,9 @@ app.use(bodyParser.json());
 // Основные маршруты
 app.use("/api/users", userRoutes);
 app.use("/api", itemRoutes);
+app.get('/api/products', (req, res) => {
+     // Логика для обработки запроса
+});
 
 // Обработчик ошибок должен быть последним middleware
 app.use(errorHandler);
