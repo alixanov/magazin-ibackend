@@ -29,7 +29,7 @@ app.use("/api", itemRoutes);
 app.use(errorHandler);
 
 // Настройка сервера
-const PORT = process.env.PORT || 3004;
+const PORT = process.env.PORT || "https://magazin-bot-backend.vercel.app/";
 
 // Создаем и настраиваем Telegram-бота
 const token = '7409890621:AAGtsTzdH-U-IQsdam-FVzVMX_EcXCxKe9I';
