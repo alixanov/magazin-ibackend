@@ -2,8 +2,8 @@ const AdminAddProductSchema = require("../model/admin-add-product")
 
 const addProduct = async (req, res) => {
      try {
-          const {  titleProduct, mahsulotnomi, swiperuchun, img, nameproduct, price, productinfo, nechtaqolgani } = req.body
-          const newProduct = new AdminAddProductSchema({  titleProduct, mahsulotnomi, swiperuchun, img, nameproduct, price, productinfo, nechtaqolgani })
+          const {  titleProduct, swiperuchun, img, nameproduct, price, productinfo, nechtaqolgani } = req.body
+          const newProduct = new AdminAddProductSchema({  titleProduct, swiperuchun, img, nameproduct, price, productinfo, nechtaqolgani })
           await newProduct.save();
           res.status(201).json(newProduct)
      } catch (error) {
@@ -37,11 +37,11 @@ const deleteProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
      try {
           const { id } = req.params;
-          const {  titleProduct, mahsulotnomi, swiperuchun, img, nameproduct, price, productinfo, nechtaqolgani } = req.body;
+          const {  titleProduct,  swiperuchun, img, nameproduct, price, productinfo, nechtaqolgani } = req.body;
 
           const updatedProduct = await AdminAddProductSchema.findByIdAndUpdate(
                id,
-               { titleProduct, mahsulotnomi, swiperuchun, img, nameproduct, price, productinfo, nechtaqolgani },
+               { titleProduct, swiperuchun, img, nameproduct, price, productinfo, nechtaqolgani },
                { new: true } // Вернуть обновленный документ
           );
 
