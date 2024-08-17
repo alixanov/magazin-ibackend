@@ -9,8 +9,8 @@ const AdminAddProductSchema = new Schema({
           type: String,
           required: true,
      },
-     img: {
-          type: [String],
+     img:{
+          type: String,
           required: true,
      },
      nameproduct: {
