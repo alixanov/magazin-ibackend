@@ -76,7 +76,7 @@ router.post('/login', async (req, res) => {
 
 const { addProduct, getAllProduct, deleteProduct, updateProduct } = require("../controller/admin-control")
 
-router.post("/add", addProduct)
+router.post("/add/admin", addProduct)
 
 router.get("/getall", getAllProduct)
 
