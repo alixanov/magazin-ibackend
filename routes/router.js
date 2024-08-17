@@ -74,6 +74,16 @@ router.post('/login', async (req, res) => {
 });
 
 
+const { addProduct, getAllProduct, deleteProduct, updateProduct } = require("../controller/admin-control")
+
+router.post("/add", addProduct)
+
+router.get("/getall", getAllProduct)
+
+router.delete("/delete/:id", deleteProduct); // New route for deleting a product
+
+router.put("/update/:id", updateProduct); // Новый маршрут для обновления
+
 
 
 

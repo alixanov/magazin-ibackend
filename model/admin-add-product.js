@@ -1,10 +1,6 @@
-const mongoose = require('mongoose');
+const { Schema, model } = require("mongoose")
+const AdminAddProductSchema = new Schema({
 
-const productSchema = new mongoose.Schema({
-     id: {
-          type: String,
-          required: true,
-     },
      titleProduct: {
           type: String,
           required: true,
@@ -14,7 +10,7 @@ const productSchema = new mongoose.Schema({
           required: true,
      },
      img: {
-          type: [String],  // Массив строк для хранения ссылок на изображения
+          type: [String],
           required: true,
      },
      nameproduct: {
@@ -35,6 +31,6 @@ const productSchema = new mongoose.Schema({
      },
 });
 
-const Product = mongoose.model('Product', productSchema);
 
-module.exports = Product;
+
+module.exports = model('AdminAddProductSchema', AdminAddProductSchema);

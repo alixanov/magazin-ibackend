@@ -6,6 +6,8 @@ const errorHandler = require("./middleware/item");
 const cors = require("cors");
 const bodyParser = require('body-parser');
 const TelegramBot = require('node-telegram-bot-api');
+require("dotenv").config()
+
 
 const app = express();
 
