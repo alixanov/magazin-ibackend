@@ -36,14 +36,14 @@ router.post("/add", async (req, res) => {
 
 // Регистрация
 router.post('/register', async (req, res) => {
-    const { login, password, mobile } = req.body;
+    const { login, password} = req.body;
 
-    if (!login || !password || !mobile) {
+    if (!login || !password ) {
         return res.status(400).json({ message: 'Все поля обязательны для заполнения' });
     }
 
     try {
-        const newUser = new User({ login, password, mobile });
+        const newUser = new User({ login, password,  });
         await newUser.save();
         res.status(201).json({ message: 'Пользователь успешно зарегистрирован' });
     } catch (err) {
