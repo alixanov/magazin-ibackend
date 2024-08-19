@@ -49,21 +49,15 @@ const startBot = () => {
      // Set bot commands
      bot.setMyCommands([
           { command: "/start", description: "Начать заново" },
+          { command: "/product", description: "Посетить" },
           { command: "/news", description: "Акция на всех товар 25%" },
           { command: "/payment", description: "Способы оплаты" },
-          { command: "/product", description: "Посетить" },
      ]);
 
      // Handle /start command
      bot.onText(/\/start/, (msg) => {
           const chatId = msg.chat.id;
           bot.sendMessage(chatId, `${msg.from.first_name}, желаем вам отличных покупок и прекрасного дня!`);
-     });
-
-     // Handle /payment command
-     bot.onText(/\/payment/, (msg) => {
-          const chatId = msg.chat.id;
-          bot.sendMessage(chatId, "UzCard Humo Visa 💳 ");
      });
 
      // Handle /product command
@@ -82,6 +76,14 @@ const startBot = () => {
                }
           });
      });
+
+     // Handle /payment command
+     bot.onText(/\/payment/, (msg) => {
+          const chatId = msg.chat.id;
+          bot.sendMessage(chatId, "UzCard Humo Visa 💳 ");
+     });
+
+ 
 
      // Handle other messages
      bot.on("message", async (msg) => {
