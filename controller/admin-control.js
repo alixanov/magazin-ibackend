@@ -2,14 +2,15 @@ const AdminAddProductSchema = require("../model/admin-add-product")
 
 const addProduct = async (req, res) => {
      try {
-          const {  titleProduct, swiperuchun, img, nameproduct, price, productinfo, nechtaqolgani } = req.body
-          const newProduct = new AdminAddProductSchema({  titleProduct, swiperuchun, img, nameproduct, price, productinfo, nechtaqolgani })
+          const { titleProduct, swiperuchun, img, nameproduct, price, productinfo, nechtaqolgani } = req.body;
+          const newProduct = new AdminAddProductSchema({ titleProduct, swiperuchun, img, nameproduct, price, productinfo, nechtaqolgani });
           await newProduct.save();
-          res.status(201).json(newProduct)
+          res.status(201).json(newProduct);
      } catch (error) {
-          res.status(500).json({ message: "Ошибка при добавлении продукта", error })
+          res.status(500).json({ message: "Ошибка при добавлении продукта", error });
      }
 }
+
 
 const getAllProduct = async (req, res) => {
      try {
